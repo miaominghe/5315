@@ -1,0 +1,61 @@
+<!-- Source: http://ecis.seattleu.edu/lee/5315/jsonxml/xmltable.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- load jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- load datatables js library -->
+  <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+  <!-- link datatables css -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+  <script type="text/javascript">
+    $(document).ready(function(){
+       var t = $('#chart').DataTable();
+       $.ajax({
+            type: "GET",
+            url: "empdata.xml", 
+            dataType: "xml",
+            success: function(xml) {  
+             $(xml).find('data').each(function(){  
+              t.row.add( [
+                $(this).find('name').text(),
+                $(this).find('designation').text(),
+                $(this).find('office').text(),
+                $(this).find('extension').text(),
+                $(this).find('joining_date').text(),
+                $(this).find('salary').text()
+              ] ).draw( false );
+             });
+            }
+        });
+      });
+  </script>
+</head>
+
+<body>
+  <table id="chart" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Office</th>
+            <th>Extension</th>
+            <th>Joining Date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Office</th>
+            <th>Extension</th>
+            <th>Joining Date</th>
+            <th>Salary</th>
+        </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
+
