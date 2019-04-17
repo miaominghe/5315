@@ -89,7 +89,7 @@
       "Track Name": "Talk",
       "Artist": "Khalid",
       "Streams": "2,590,992",
-      "Genre": "R&B/Soul"
+      "Genre": "RnB/Soul"
     },
     {
       "Position": "14",
