@@ -10,22 +10,20 @@
     <table id="empTable" class="display" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Office</th>
-                <th>Extension</th>
-                <th>Joining Date</th>
-                <th>Salary</th>
+                <th>Position</th>
+                <th>Track Name</th>
+                <th>Artist</th>
+                <th>Streams</th>
+                <th>Genre</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Office</th>
-                <th>Extension</th>
-                <th>Joining Date</th>
-                <th>Salary</th>
+                <th>Position</th>
+                <th>Track Name</th>
+                <th>Artist</th>
+                <th>Streams</th>
+                <th>Genre</th>
             </tr>
         </tfoot>
     </table>
@@ -40,12 +38,11 @@
         $('#empTable').dataTable({
             "ajax": "empdata.js",
             "columns": [
-                {"data": "name"},
-                {"data": "designation"},
-                {"data": "office"},
-                {"data": "extension"},
-                {"data": "joining_date"},
-                {"data": "salary"}
+                {"data": "Position"},
+                {"data": "Track Name"},
+                {"data": "Artist"},
+                {"data": "Streams"},
+                {"data": "Genre"}
             ]
         });   
     });
